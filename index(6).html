@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Candidates</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50; /* Green color */
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50; /* Green color for table header */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>All Candidates</h1>
+
+    <button onclick="initiateDraw()">Initiate Draw</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Column 1</th>
+                <th>Column 2</th>
+            </tr>
+        </thead>
+        <tbody id="candidatesTableBody">
+            <!-- Table rows will be added dynamically using JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        // Data for columns
+        var column1Data = ["A-46", "A-47", "A-47"];
+        var column2Data = ["101", "102", "103"];
+
+        // Function to initialize the table
+        function initTable() {
+            var tableBody = document.getElementById('candidatesTableBody');
+
+            // Clear existing rows
+            tableBody.innerHTML = '';
+
+            // Add rows to the table
+            for (var i = 0; i < column1Data.length; i++) {
+                var row = tableBody.insertRow(i);
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                cell1.innerHTML = column1Data[i];
+                cell2.innerHTML = column2Data[i];
+            }
+        }
+
+        // Function to open the GitHub link in a new tab
+        function initiateDraw() {
+            var githubLink = "https://github.com/Stepone-pk/Pine-Plots/blob/55ea4faeafc0cf04f5266c78f4d429f71cf151a6/index%20(17)%20(1).html";
+            window.open(githubLink, '_blank');
+        }
+
+        // Initialize the table when the page loads
+        initTable();
+    </script>
+
+</body>
+</html>
